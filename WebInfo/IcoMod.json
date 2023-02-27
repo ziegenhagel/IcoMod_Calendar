@@ -7,7 +7,7 @@
     "config": 
     [
         {
-            "name": "refreshTimer",
+            "name": "refreshTime",
             "type": "number",
             "min": 0,
             "max": 86400000,
