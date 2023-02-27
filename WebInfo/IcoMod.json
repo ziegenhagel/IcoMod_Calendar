@@ -1,0 +1,23 @@
+{
+    "name": "Kalender",
+    "version": "1.0.0",
+    "description": "ICS Kalender",
+    "author": "Domi",
+    "license": "MIT",
+    "config": 
+    [
+        {
+            "name": "refreshTimer",
+            "type": "number",
+            "min": 0,
+            "max": 86400000,
+            "default": 60000
+        },
+        {
+            "name": "icalUrl",
+            "type": "text",
+            "description": "URL zum Kalender im ICAL Format (Endung .ics)",
+            "default": "https://calendar.google.com/calendar/ical/38d7067ca792d7922cf11a9f565c6be0aae653dcb2e409030014f492707b62ca%40group.calendar.google.com/private-be6bb046e5d0a42387294dd5e9c6fb07/basic.ics"
+        }
+    ]
+}
