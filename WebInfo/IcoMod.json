@@ -7,7 +7,7 @@
     "config": 
     [
         {
-            "name": "refreshTime",
+            "name": "refreshInterval",
             "type": "number",
             "min": 0,
             "max": 86400000,

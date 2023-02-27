@@ -24,10 +24,9 @@ IcoMod_Calendar::IcoMod_Calendar(Adafruit_ST7735* tft, unsigned int colors[], Js
 void IcoMod_Calendar::draw(Adafruit_ST7735* tft)
 {
 
-  // zeige aktuelle posts
   tft->fillScreen(_colors[0]);
 
-  TextUtils::printLinesCentered(tft, "Sample event", 20, 2, tft->height() / 6 * 1, 1, colors[1]);
+  TextUtils::printLinesCentered(tft, "Sample event", 20, 2, tft->height() / 6 * 1, 1, _colors[1]);
 
 }
 
@@ -53,16 +52,15 @@ void IcoMod_Calendar::refresh()
     }
 
     String url = String(_icalUrl);
+    _ical = ApiUtils::httpGETRequest(url.c_str());
 
-    ApiUtils::getJsonFromServer(&_jsonBuffer, url.c_str());
+    Serial.println(_ical);
 
-    if (_jsonBuffer.isNull())
+    if (_ical != "")
     {
       Serial.println("Parsing Calendar data failed!");
       return;
     }
-
-    JsonArray data = _jsonBuffer.as<JsonArray>();
 
     draw(_tft);
   }

@@ -16,17 +16,12 @@ class IcoMod_Calendar : public IcoMod
     void onClick();
     void initialize();
     void refresh();
-    void next();
-    void draw(Adafruit_ST7735* tft, unsigned int colors[], JsonArray &data, unsigned int currentIndex, unsigned int fontSize);
+    void draw(Adafruit_ST7735* tft);
   private:
-    int _currentIndex;
-    StaticJsonDocument<24576> _jsonBuffer;
     unsigned long _nextRefresh;
-    unsigned long _lastFetch;
-    unsigned long _fontSize;
-    unsigned long _refreshTime;
-    const char *_progressBar;
-    int progressHeight = 2;
+    unsigned long _refreshInterval;
+    const char *_icalUrl;
+    String _ical;
 };
 
 #endif
